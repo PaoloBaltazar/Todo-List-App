@@ -12,22 +12,30 @@ renderTodoList()
 function renderTodoList() {
   let todoListHTML = '';
 
-  todoList.forEach(function(todoObject, index) {
+  todoList.forEach((todoObject, index) => {
 
     const { name, dueDate} = todoObject;
     const html = `
-    <p>
-      ${name} ${dueDate}
-      <button onclick="
-        todoList.splice(${index}, 1);
-        renderTodoList();
+      <div>${name} ${dueDate}</div>
+      <div> </div>
+      <button class="js-delete-todo-button"
       ">Delete</button>
-    </p>
     `;
     todoListHTML += html;
   });
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+
+  document.querySelectorAll('.js-delete-todo-button').forEach((deleteButton, index) => {
+    deleteButton.addEventListener('click', () =>{
+      todoList.splice(index, 1);
+      renderTodoList();
+    });
+  });
 }
+
+document.querySelector('.js-add-todo-button').addEventListener('click', () => {
+  addTodo();
+});
 
 
 function addTodo() {
