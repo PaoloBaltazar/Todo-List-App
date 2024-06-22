@@ -4,7 +4,7 @@ renderTodoList();
 
 function renderTodoList() {
   todoHtml = '';
-  todoList.forEach((todoItems) => {
+  todoList.forEach((todoItems, index) => {
   
     const name = todoItems;
     const html = `
@@ -15,17 +15,16 @@ function renderTodoList() {
     `;
 
     todoHtml += html;
+  })
 
-    document.querySelector('.js-todo-list').innerHTML = todoHtml;
+  document.querySelector('.js-todo-list').innerHTML = todoHtml;
 
-    document.querySelectorAll('.js-delete-todo').forEach((deleteButton, index) => {
-      deleteButton.addEventListener('click', () => {
-        todoList.splice(index, 1);
-        saveToStorage();
-        renderTodoList();
-      })
+  document.querySelectorAll('.js-delete-todo').forEach((deleteButton, index) => {
+    deleteButton.addEventListener('click', () => {
+      todoList.splice(index, 1);
+      saveToStorage();
+      renderTodoList();
     })
-
   })
 }
 
