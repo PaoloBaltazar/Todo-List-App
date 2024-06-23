@@ -9,8 +9,9 @@ function renderTodoList() {
     const name = todoItems;
     const html = `
       <div class="todo-list-items">
+        <input type="checkbox"/>
         <p>${name}</p>
-        <button class="js-delete-todo">Delete</button>
+        <span class="js-delete-todo"><img class="delete-button" src="delete-button.png"/></span>
       </div>
     `;
 
@@ -18,6 +19,11 @@ function renderTodoList() {
   })
 
   document.querySelector('.js-todo-list').innerHTML = todoHtml;
+
+  if (todoList.length === 0) {
+    document.querySelector('.js-todo-list').innerHTML = `<p>No new Task</p>`
+  }
+  
 
   document.querySelectorAll('.js-delete-todo').forEach((deleteButton, index) => {
     deleteButton.addEventListener('click', () => {

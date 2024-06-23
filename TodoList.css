@@ -4,6 +4,7 @@ h1,
 h2,
 h3,
 p {
+  font-family: "Inter", sans-serif;
   height: 100%;
   margin: 0;
 }
@@ -12,6 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: aliceblue;
 }
 
 .todo-container {
@@ -21,8 +23,10 @@ body {
   padding: 20px;
   width: 100%;
   max-width: 500px;
-  gap: 10px;
-  background-color: gray;
+  gap: 20px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
 }
 
 .add-todo-header {
@@ -32,9 +36,46 @@ body {
 .add-todo {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.add-todo-input {
+  height: 30px;
+  width: 400px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(200,200,200);
+  padding-left: 10px;
+}
+
+.add-todo-button {
+  height: 32px;
+  width: 60px;
+  background-color: #e34432;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .todo-list-items {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #eeeee4;
+  padding: 10px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.delete-button {
+  width: 30px;
+  margin-top: 5px;
+  cursor: pointer;
 }
