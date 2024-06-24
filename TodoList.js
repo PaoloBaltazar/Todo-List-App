@@ -2,16 +2,19 @@ const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 renderTodoList();
 
+
 function renderTodoList() {
   todoHtml = '';
   todoList.forEach((todoItems, index) => {
-  
+
     const name = todoItems;
     const html = `
       <div class="todo-item">    
         <div class="todo-item-content">
           <input type="checkbox" id="check-${index}" class="todo-checkbox"/>
-          <label for="check-${index}" class="todo-label">${name}</label>
+          <label for="check-${index}" class="todo-label">
+            ${name}
+          </label>
         </div>
         
         <span class="fa-solid fa-trash-can js-delete-todo"></span>
@@ -33,8 +36,16 @@ function renderTodoList() {
     deleteButton.addEventListener('click', () => {
       todoList.splice(index, 1);
       saveToStorage();
+      displayTodoQuantity();
       renderTodoList();
     })
+  })
+
+  document.querySelector('.clear-todo').addEventListener('click', () => {
+    todoList.splice(0, todoList.length)
+    saveToStorage();
+    displayTodoQuantity();
+    renderTodoList();
   })
 }
 
@@ -46,7 +57,14 @@ function addTodo() {
 
   inputElement.value = '';
   renderTodoList();
+  displayTodoQuantity();
   saveToStorage();
+}
+
+function displayTodoQuantity () {
+  const todoQuantity = todoList.length
+  html = `${todoQuantity} items`
+  document.querySelector('.js-todo-quantity').innerHTML = html;
 }
 
 function saveToStorage() {
@@ -56,6 +74,8 @@ function saveToStorage() {
 document.querySelector('.js-add-todo-button').addEventListener('click', () => {
   addTodo();
 });
+
+
 
 document.body.addEventListener('keydown' , (event) => {
   if (event.key === 'Enter') {
