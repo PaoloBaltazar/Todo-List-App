@@ -13,16 +13,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .todo-container {
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 20px;
+  padding: 40px 30px 60px 30px;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   gap: 20px;
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -31,6 +34,8 @@ body {
 
 .add-todo-header {
   align-self: center;
+  font-size: 42px;
+  color: #2C5364;
 }
 
 .add-todo {
@@ -40,8 +45,8 @@ body {
 }
 
 .add-todo-input {
-  height: 30px;
-  width: 400px;
+  height: 40px;
+  width: 500px;
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
@@ -50,9 +55,9 @@ body {
 }
 
 .add-todo-button {
-  height: 32px;
+  height: 42px;
   width: 60px;
-  background-color: #e34432;
+  background-color: #2C5364;
   border: none;
   color: white;
   font-weight: bold;
@@ -60,22 +65,68 @@ body {
   cursor: pointer;
 }
 
-.todo-list-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #eeeee4;
-  padding: 10px;
-}
-
 .todo-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
-.delete-button {
-  width: 30px;
-  margin-top: 5px;
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background-color:#d5d5d5;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  
+}
+
+.todo-label {
+  font-size: 24px;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.todo-checkbox:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 15px;
+  color: white;
+  display: none;
+}
+
+.todo-checkbox:checked {
+  background-color: #2C5364;
+}
+
+.todo-checkbox:checked:after {
+  display: block;
+}
+
+.fa-trash {
+  background-color: #2C5364;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
   cursor: pointer;
 }
+
+

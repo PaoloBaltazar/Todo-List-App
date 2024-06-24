@@ -8,10 +8,13 @@ function renderTodoList() {
   
     const name = todoItems;
     const html = `
-      <div class="todo-list-items">
-        <input type="checkbox"/>
-        <p>${name}</p>
-        <span class="js-delete-todo"><img class="delete-button" src="delete-button.png"/></span>
+      <div class="todo-item">    
+        <div class="todo-item-content">
+          <input type="checkbox" id="check-${index}" class="todo-checkbox"/>
+          <label for="check-${index}" class="todo-label">${name}</label>
+        </div>
+        
+        <span class="fa-solid fa-trash js-delete-todo"></span>
       </div>
     `;
 
