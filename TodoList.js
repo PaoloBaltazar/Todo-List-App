@@ -25,13 +25,7 @@ function renderTodoList() {
   })
 
   document.querySelector('.js-todo-list').innerHTML = todoHtml;
-
-
-  // if (todoList.length === 0) {
-  //   document.querySelector('.js-todo-list').innerHTML = `<p>No new Task</p>`
-  // }
   
-
   document.querySelectorAll('.js-delete-todo').forEach((deleteButton, index) => {
     deleteButton.addEventListener('click', () => {
       todoList.splice(index, 1);
@@ -53,12 +47,18 @@ function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
   const name = inputElement.value;
 
-  todoList.push(name);
+  if (!name) {
+    alert('Please enter todo')
+    
+  } else {
+    todoList.push(name);
 
-  inputElement.value = '';
-  renderTodoList();
-  displayTodoQuantity();
-  saveToStorage();
+    inputElement.value = '';
+    renderTodoList();
+    displayTodoQuantity();
+    saveToStorage();
+  }
+  
 }
 
 function displayTodoQuantity () {
