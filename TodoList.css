@@ -13,28 +13,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0F2027;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ADA996;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  
 
 }
 
-.todo-container {
+.container {
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 40px 30px 60px 30px;
   width: 100%;
   max-width: 600px;
   gap: 20px;
-  background-color: white;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 20px;
 }
 
 .add-todo-header {
   align-self: center;
-  font-size: 42px;
+  font-size: 3rem;
+  letter-spacing: 5px;
   color: #2C5364;
 }
 
@@ -42,39 +43,43 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 30px;
+  
 }
 
 .add-todo-input {
-  height: 40px;
-  width: 500px;
-  border-radius: 5px;
+  height: 50px;
+  width: 540px;
   border-style: solid;
   border-width: 1px;
-  border-color: rgb(200,200,200);
+  border: none;
   padding-left: 10px;
 }
 
 .add-todo-button {
-  height: 42px;
+  height: 50px;
   width: 60px;
   background-color: #2C5364;
   border: none;
   color: white;
   font-weight: bold;
-  border-radius: 10px;
   cursor: pointer;
 }
 
 .todo-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
+  
+
 }
 
 .todo-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: White;
+  padding: 20px;
 }
 
 .todo-item-content {
@@ -86,9 +91,9 @@ body {
 .todo-checkbox {
   appearance: none;
   -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
-  background-color:#d5d5d5;
+  height: 25px;
+  width: 25px;
+  background-color:#b6b6b6;
   border-radius: 5px;
   cursor: pointer;
   display: flex;
@@ -99,7 +104,7 @@ body {
 }
 
 .todo-label {
-  font-size: 24px;
+  font-size: 1rem;
   cursor: pointer;
   padding-left: 10px;
 }
@@ -121,12 +126,23 @@ body {
   display: block;
 }
 
-.fa-trash {
-  background-color: #2C5364;
-  padding: 10px;
-  color: white;
-  font-size: 20px;
+.fa-trash-can {
+  color: #2C5364;
+  font-size: 18px;
   cursor: pointer;
+}
+
+.pending-todo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author {
+  margin-top: 50px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #b8b7b7;
 }
 
 

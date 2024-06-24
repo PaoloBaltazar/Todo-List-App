@@ -14,7 +14,7 @@ function renderTodoList() {
           <label for="check-${index}" class="todo-label">${name}</label>
         </div>
         
-        <span class="fa-solid fa-trash js-delete-todo"></span>
+        <span class="fa-solid fa-trash-can js-delete-todo"></span>
       </div>
     `;
 
@@ -23,9 +23,10 @@ function renderTodoList() {
 
   document.querySelector('.js-todo-list').innerHTML = todoHtml;
 
-  if (todoList.length === 0) {
-    document.querySelector('.js-todo-list').innerHTML = `<p>No new Task</p>`
-  }
+
+  // if (todoList.length === 0) {
+  //   document.querySelector('.js-todo-list').innerHTML = `<p>No new Task</p>`
+  // }
   
 
   document.querySelectorAll('.js-delete-todo').forEach((deleteButton, index) => {
@@ -55,6 +56,12 @@ function saveToStorage() {
 document.querySelector('.js-add-todo-button').addEventListener('click', () => {
   addTodo();
 });
+
+document.body.addEventListener('keydown' , (event) => {
+  if (event.key === 'Enter') {
+    addTodo();
+  }
+})
 
 
 
