@@ -82,6 +82,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 1rem;
 }
 
 .todo-checkbox {
@@ -100,7 +101,6 @@ body {
 }
 
 .todo-label {
-  font-size: 1rem;
   cursor: pointer;
   padding-left: 10px;
 }
@@ -120,6 +120,10 @@ body {
 
 .todo-checkbox:checked:after {
   display: block;
+}
+
+.todo-checkbox:checked + .todo-label {
+  text-decoration: line-through;
 }
 
 .fa-trash-can {
@@ -148,6 +152,7 @@ body {
   display: flex;
   justify-content: center;
   border-top: 1px solid #b8b7b7;
+  font-size: 14px;
 }
 
 

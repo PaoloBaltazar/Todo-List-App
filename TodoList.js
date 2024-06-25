@@ -1,17 +1,19 @@
 const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 renderTodoList();
+displayPendingTasks();
 
 
 function renderTodoList() {
   todoHtml = '';
   todoList.forEach((todoItems, index) => {
 
-    const name = todoItems;
+    const name = todoItems.name;
+    const checked = todoItems.checked ? 'checked' : '';
     const html = `
       <div class="todo-item">    
         <div class="todo-item-content">
-          <input type="checkbox" id="check-${index}" class="todo-checkbox"/>
+          <input type="checkbox" id="check-${index}" class="todo-checkbox js-todo-checkbox" ${checked}/>
           <label for="check-${index}" class="todo-label">
             ${name}
           </label>
@@ -30,15 +32,24 @@ function renderTodoList() {
     deleteButton.addEventListener('click', () => {
       todoList.splice(index, 1);
       saveToStorage();
-      displayTodoQuantity();
+      displayPendingTasks();
       renderTodoList();
+    })
+  })
+
+  document.querySelectorAll('.js-todo-checkbox').forEach((checkbox, index) => {
+    checkbox.addEventListener('change', () => {
+      todoList[index].checked = checkbox.checked;
+      console.log(todoList);
+      saveToStorage();
+      displayPendingTasks();
     })
   })
 
   document.querySelector('.clear-todo').addEventListener('click', () => {
     todoList.splice(0, todoList.length)
     saveToStorage();
-    displayTodoQuantity();
+    displayPendingTasks();
     renderTodoList();
   })
 }
@@ -51,19 +62,19 @@ function addTodo() {
     alert('Please enter todo')
     
   } else {
-    todoList.push(name);
+    todoList.push({ name, checked: false});
 
     inputElement.value = '';
     renderTodoList();
-    displayTodoQuantity();
+    displayPendingTasks();
     saveToStorage();
   }
   
 }
 
-function displayTodoQuantity () {
-  const todoQuantity = todoList.length
-  html = `${todoQuantity} items`
+function displayPendingTasks () {
+  const pendingTasks = todoList.filter(todo => !todo.checked).length;
+  const html = `You have ${pendingTasks} pending task`
   document.querySelector('.js-todo-quantity').innerHTML = html;
 }
 
@@ -82,6 +93,8 @@ document.body.addEventListener('keydown' , (event) => {
     addTodo();
   }
 })
+
+
 
 
 
