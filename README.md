@@ -1,6 +1,6 @@
 ## Todo List Project
 
-##Screenshot
+## Screenshot
 
 ![TodoList App](https://github.com/PaoloBaltazar/Todo-List-App/assets/113003835/1d0856bb-93ac-4330-a4a6-b85c2431aafa)
 
@@ -13,21 +13,21 @@
 
 ## Technologies Used
 
-- HTML
-- CSS
-- JavaScript
+- **HTML**
+- **CSS**
+- **JavaScript**
 
 ## What I Learned
 
--DOM Manipulation
--Events
--Local Storage
--Arrays
--Flexbox
+- **DOM Manipulation**
+- **Events**
+- **Local Storage**
+- **Arrays**
 
-##Useful Resources
 
--[Google Fonts](https://fonts.google.com/)
--[Font Awesome](https://fontawesome.com/)
+## Useful Resources
+
+- [Google Fonts](https://fonts.google.com/)
+- [Font Awesome](https://fontawesome.com/)
 
 
