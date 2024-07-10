@@ -30,7 +30,7 @@ DEMO: https://paolobaltazar.github.io/Todo-List-App/
 
 ## Useful Resources
 
--[Google Fonts](https://fonts.google.com/)
--[Font Awesome](https://fontawesome.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Font Awesome](https://fontawesome.com/)
 
 
