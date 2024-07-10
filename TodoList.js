@@ -5,7 +5,7 @@ displayPendingTasks();
 
 
 function renderTodoList() {
-  todoHtml = '';
+  todoHtml = "";
   todoList.forEach((todoItems, index) => {
 
     const name = todoItems.name;
