@@ -23,12 +23,12 @@ DEMO: https://paolobaltazar.github.io/Todo-List-App/
 
 ## What I Learned
 
--**DOM Manipulation**: Gained skills in dynamically updating the content and structure of the web page based on user interactions.
--**Events**: Learned to handle user actions such as clicks and key presses to provide a responsive user experience.
--**Local Storage**: Implemented persistent storage to save tasks in the browser, ensuring data remains available across page reloads.
--**Arrays**: Utilized arrays to manage the list of tasks efficiently, allowing for easy addition, deletion, and storage of tasks.
+- **DOM Manipulation**: Gained skills in dynamically updating the content and structure of the web page based on user interactions.
+- **Events**: Learned to handle user actions such as clicks and key presses to provide a responsive user experience.
+- **Local Storage**: Implemented persistent storage to save tasks in the browser, ensuring data remains available across page reloads.
+- **Arrays**: Utilized arrays to manage the list of tasks efficiently, allowing for easy addition, deletion, and storage of tasks.
 
-##Useful Resources
+## Useful Resources
 
 -[Google Fonts](https://fonts.google.com/)
 -[Font Awesome](https://fontawesome.com/)
